@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/filipe/ros/catkin_ws_rosi_defy/devel/include",
+        "/opt/ros/melodic/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}
