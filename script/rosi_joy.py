@@ -34,8 +34,8 @@ class RosiNodeClass():
 		rospy.loginfo('Rosi_joy node started')
 
 		# registering to publishers
-		self.pub_traction = rospy.Publisher('/rosi/traction_speed', RosiMovementArray, queue_size=1)
-		self.pub_arm = rospy.Publisher('/rosi/arms_speed', RosiMovementArray, queue_size=1)
+		self.pub_traction = rospy.Publisher('/rosi/command_traction_speed', RosiMovementArray, queue_size=1)
+		self.pub_arm = rospy.Publisher('/rosi/command_arms_speed', RosiMovementArray, queue_size=1)
 
 		# registering to subscribers
 		self.sub_joy = rospy.Subscriber('/joy', Joy, self.callback_Joy)
@@ -60,9 +60,9 @@ class RosiNodeClass():
 
 				# separates each traction side command
 				if i < 2:
-					traction_command.velocity = self.omega_right
+					traction_command.joint_var = self.omega_right
 				else:
-					traction_command.velocity = self.omega_left
+					traction_command.joint_var = self.omega_left
 
 				# appending the command to the list
 				traction_command_list.movement_array.append(traction_command)
@@ -75,9 +75,9 @@ class RosiNodeClass():
 				
 				# separates each arm side command
 				if i == 0 or i == 2:
-					arm_command.velocity = self.arm_front_rotSpeed
+					arm_command.joint_var = self.arm_front_rotSpeed
 				else:
-					arm_command.velocity = self.arm_rear_rotSpeed
+					arm_command.joint_var = self.arm_rear_rotSpeed
 
 				# appending the command to the list
 				arm_command_list.movement_array.append(arm_command)
