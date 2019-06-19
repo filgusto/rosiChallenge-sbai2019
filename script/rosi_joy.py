@@ -3,7 +3,7 @@ import rospy
 import numpy as np
 from rosi_defy.msg import RosiMovement
 from rosi_defy.msg import RosiMovementArray
-from rosi_defy.msg import ManipulatorCommand
+from rosi_defy.msg import ManipulatorJoints
 from sensor_msgs.msg import Joy
 
 class RosiNodeClass():
