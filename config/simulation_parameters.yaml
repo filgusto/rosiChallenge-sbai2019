@@ -5,3 +5,11 @@
   # disable it for faster simulation (but no visualization)
   simulation_rendering: false
 
+  # Velodyne processing flag
+  # disable it for faster simulation (but no Velodyne data)
+  velodyne_processing: true
+
+  # Kinect processing flag
+  # disable it for faster simulation (but no kinect data)
+  kinect_processing: true
+
