@@ -4,7 +4,7 @@
   # Simulation Rendering Flag
   # disable it for faster simulation (but no visualization)
   # possible values: true, false.
-  simulation_rendering: false
+  simulation_rendering: true
 
   # Velodyne processing flag
   # disable it for faster simulation (but no Velodyne data)
