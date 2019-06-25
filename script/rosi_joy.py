@@ -9,9 +9,9 @@ from sensor_msgs.msg import Joy
 class RosiNodeClass():
 
 	# class attributes
-	max_translational_speed = 10 # in [m/s]
+	max_translational_speed = 5 # in [m/s]
 	max_rotational_speed = 10 # in [rad/s]
-	max_arms_rotational_speed = 1 # in [rad/s]
+	max_arms_rotational_speed = 0.52 # in [rad/s]
 
 	# how to obtain these values? see Mandow et al. COMPLETE THIS REFERENCE
 	var_lambda = 0.965
