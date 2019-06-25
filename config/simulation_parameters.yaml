@@ -3,5 +3,5 @@
 
   # Simulation Rendering Flag
   # disable it for faster simulation (but no visualization)
-  simulation_rendering: true
+  simulation_rendering: false
 
