@@ -5,12 +5,14 @@ This repository contains the ROS package and V-REP files for running the **ROSI 
 The final stage of the competition will occur on the **XIV SBAI**, to be held in Ouro Preto (Brazil) in october 2019.
 One may find more info about SBAI in www.sbai2019.com.br.
 
+Additionally, the content here may be beneficial for robotics classes. There is a complete mobile robot model with divers actuators and sensor fully communicating with the ROS framework and an industrial belt conveyor scenario. 
+Feel free to use it for spreading the robotics knowledge in your classes! :)
+
+We also would like to thank Marc Freese and the Coppelia Robotics team for providing the V-REP simulator for this challenge.
 
 # Package description
 
-This repository is a ROS package developped and tested on **Ubuntu 18.04** and **ROS Melodic**.
-
-The folders organization is as follows:
+This repository is structured as a ROS package. The folders organization is as follows:
 
 - `cenas` - Contains simulation cenes of the challenge. You may load them inside V-REP simulator.
 
@@ -25,6 +27,100 @@ The folders organization is as follows:
 - `resources` - General support files.
 
 - `script` - Example node in Python to control Rosi using a joystick. Code written with a Xbox 360 wireless joystick. 
+
+# Installation
+
+The simulator was conceived using **Ubuntu 18.04**, **ROS Melodic**, and **V-REP 3.6.1 (rev.4)**. Another software versions might work, but they are not recommended nor officially supported for the competition. We consider that you have already installed these softwares.
+
+Follow the steps below to configure your V-REP along with ROS:
+
+**1.** Download **V-REP PRO EDU V3.6.1 rev4** from the Coppelia Robotics website: http://www.coppeliarobotics.com/downloads.html
+
+
+**2.** Unzip it (preferentially) to your **home** folder and rename the folder as `vrep`.
+
+
+**3.** Add both the CATKIN_WS and V-REP folder location to your `.bashrc`, an alias to run it, and source the `.bashrc` again: 
+```
+$ echo "export ROS_CATKIN_WS='<path_to_your_catkin_ws_folder>'" >> $HOME/.bashrc
+$ echo "export VREP_ROOT='<path_to_your_vrep_folder>'" >> $HOME/.bashrc
+$ echo "alias vrep=$VREP_ROOT/vrep.sh" >> ~/.bashrc
+$ source $HOME/.bashrc
+```
+Remember to insert the path to your CATKIN_WS and V-REP folder in this command.
+
+(All instructions consider that you use `bash`. If you use `.zsh`, you know what to do ;)
+
+
+**4.** Test the V-REP functionality by running:
+```
+$ vrep
+```
+(Notice that you have created this command on the last step)
+
+
+**5.** Clone recursively the V-REP/ROS interface to your `catkin_ws/src`:
+
+```
+$ cd $ROS_CATKIN_WS/src/
+$ git clone --recursive https://github.com/CoppeliaRobotics/v_repExtRosInterface.git vrep_ros_interface
+```
+(More information and credits about this interface can be found on its [Github repository](https://github.com/CoppeliaRobotics/v_repExtRosInterface.git)
+
+
+**6.** Install some support packages:
+```
+$ sudo apt install python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy
+```
+
+**8.** Clone and download this repository to your `catkin_ws/src` folder with the name `rosi_defy`:
+```
+$ cd $ROS_CATKIN_WS/src
+$ git clone https://github.com/filRocha/sbai2019-rosiDefy rosi_defy
+``` 
+
+**7.** We have just installed a new `catkin build` tool. If you use `catkin_make`, you have to clean your workspace and perform a fresh new compilation:
+```
+$ cd $ROS_CATKIN_WS
+$ catkin clean
+$ catkin build
+$ source $HOME/.bashrc
+```
+
+**8.** Some messages from our `rosi_defy` package should be referenced in the `vrep_ros_interface` package. To do that:
+
+8.1 Insert their namespace and names in `<vrep_ros_interface>/meta/messages.txt` file:
+```
+$ echo -e "rosi_defy/ManipulatorJoints\nrosi_defy/RosiMovement\nrosi_defy/RosiMovementArray" >> $ROS_CATKIN_WS/src/vrep_ros_interface/meta/messages.txt
+```
+
+8.2 Tell `vrep_ros_interface`that it depends on the `rosi_defy` package by adding 
+```
+<depend>rosi_defy</depend>
+```
+to `vrep_ros_interface/package.xml`.
+
+8.3 Add `rosi_defy` package dependence on the `vrep_ros_interface/CMakeLists.txt`:
+```
+set(PKG_DEPS
+  ... (many many other packages)
+  rosi_defy
+)
+```
+
+**9.** If your compilation runs well, there is now a ros interface library to copy from your `catkin_ws` to the V-REP folder:
+```
+$ cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosInterface.so $VREP_ROOT
+```
+(Notice that, for further events, every time you add new custom ROS messages to the interface, you have to re-compile this library and re-copy it to `$VREP_ROOT`.
+
+**10.** Everything should be set up for now. To run the simulation, you should first (always!) run ROS:
+```
+$ roscore
+$ vrep
+```
+Open the scene in `<rosi_defy>/cenas/` and play it. You should be able to see the simulator topics being published with `rostopic list`. Additionally, if you have a joystick, you can run the `rosi_joy.py` example node to see how the communication with the robot works.
+
 
 
 # Simulation Parameters
