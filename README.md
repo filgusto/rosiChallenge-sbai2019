@@ -28,19 +28,45 @@ This repository is structured as a ROS package. The folders organization is as f
 
 - `script` - Example node in Python to control Rosi using a joystick. Code written with a Xbox 360 wireless joystick. 
 
+
+
 # Installation
 
-The simulator was conceived using **Ubuntu 18.04**, **ROS Melodic**, and **V-REP 3.6.1 (rev.4)**. Another software versions might work, but they are not recommended nor officially supported for the competition. We consider that you have already installed these softwares.
+The simulator was conceived using **Ubuntu 18.04**, **ROS Melodic**, and **V-REP 3.6.2 (rev.0)**. Another software versions might work, but they are not recommended nor officially supported for the competition. We consider that you have already installed these softwares.
+
+## Automatic installation
 
 Follow the steps below to configure your V-REP along with ROS:
 
-**1.** Download **V-REP PRO EDU V3.6.1 rev4** from the Coppelia Robotics website: http://www.coppeliarobotics.com/downloads.html
+
+**1.** Clone and download this repository package to your `catkin_ws/src` folder with the name `rosi_defy`:
+```
+$ git clone https://github.com/filRocha/sbai2019-rosiDefy rosi_defy
+``` 
+
+**2.** Navigate to `<rosi_defy>/resources` folder and run the following:
+```
+$ cd <catkin_ws>/src/rosi_defy/resources/
+$ chmod u+x ./rosi_partial.sh
+$ ./rosi_installer.sh
+```
+This script **should do all needed configurations** to run V-REP alongside ROS. Pay attention to its blue messages as they may contain important information. 
+
+If everything went fine, you are good to go!
+If you have any trouble running the ROSI simulator after running this script, you can re-do the below steps manually.
 
 
-**2.** Unzip it (preferentially) to your **home** folder and rename the folder as `vrep`.
+## Manual Instalation
+Steps for manual installation:
+*This consider you have already done step 1 and (at least tried) step 2.
+
+**3.** Download **V-REP PRO EDU V3.6.1 rev4** from the Coppelia Robotics website: http://www.coppeliarobotics.com/downloads.html
 
 
-**3.** Add both the CATKIN_WS and V-REP folder location to your `.bashrc`, an alias to run it, and source the `.bashrc` again: 
+**4.** Unzip it (preferentially) to your **home** folder and rename the folder as `vrep`.
+
+
+**5.** Add both the CATKIN_WS and V-REP folder location to your `.bashrc`, an alias to run it, and source the `.bashrc` again: 
 ```
 $ echo "export ROS_CATKIN_WS='<path_to_your_catkin_ws_folder>'" >> $HOME/.bashrc
 $ echo "export VREP_ROOT='<path_to_your_vrep_folder>'" >> $HOME/.bashrc
@@ -52,15 +78,14 @@ Remember to insert the path to your CATKIN_WS and V-REP folder in this command.
 (All instructions consider that you use `bash`. If you use `.zsh`, you know what to do ;)
 
 
-**4.** Test the V-REP functionality by running:
+**6.** Test the V-REP functionality by running:
 ```
 $ vrep
 ```
 (Notice that you have created this command on the last step)
 
 
-**5.** Clone recursively the V-REP/ROS interface to your `catkin_ws/src`:
-
+**7.** Clone recursively the V-REP/ROS interface to your `catkin_ws/src`:
 ```
 $ cd $ROS_CATKIN_WS/src/
 $ git clone --recursive https://github.com/CoppeliaRobotics/v_repExtRosInterface.git vrep_ros_interface
@@ -68,18 +93,13 @@ $ git clone --recursive https://github.com/CoppeliaRobotics/v_repExtRosInterface
 (More information and credits about this interface can be found on its [Github repository](https://github.com/CoppeliaRobotics/v_repExtRosInterface.git)
 
 
-**6.** Install some support packages:
+**8.** Install some support packages:
 ```
 $ sudo apt install python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy
 ```
 
-**8.** Clone and download this repository to your `catkin_ws/src` folder with the name `rosi_defy`:
-```
-$ cd $ROS_CATKIN_WS/src
-$ git clone https://github.com/filRocha/sbai2019-rosiDefy rosi_defy
-``` 
 
-**7.** We have just installed a new `catkin build` tool. If you use `catkin_make`, you have to clean your workspace and perform a fresh new compilation:
+**9.** We have just installed a new `catkin build` tool. If you use `catkin_make`, you have to clean your workspace and perform a fresh new compilation:
 ```
 $ cd $ROS_CATKIN_WS
 $ catkin clean
@@ -87,20 +107,21 @@ $ catkin build
 $ source $HOME/.bashrc
 ```
 
-**8.** Some messages from our `rosi_defy` package should be referenced in the `vrep_ros_interface` package. To do that:
 
-8.1 Insert their namespace and names in `<vrep_ros_interface>/meta/messages.txt` file:
+**10.** Some messages from our `rosi_defy` package should be referenced in the `vrep_ros_interface` package. To do that:
+
+10.1 Insert their namespace and names in `<vrep_ros_interface>/meta/messages.txt` file:
 ```
 $ echo -e "rosi_defy/ManipulatorJoints\nrosi_defy/RosiMovement\nrosi_defy/RosiMovementArray" >> $ROS_CATKIN_WS/src/vrep_ros_interface/meta/messages.txt
 ```
 
-8.2 Tell `vrep_ros_interface`that it depends on the `rosi_defy` package by adding 
+10.2 Tell `vrep_ros_interface`that it depends on the `rosi_defy` package by adding 
 ```
 <depend>rosi_defy</depend>
 ```
 to `vrep_ros_interface/package.xml`.
 
-8.3 Add `rosi_defy` package dependence on the `vrep_ros_interface/CMakeLists.txt`:
+10.3 Add `rosi_defy` package dependence on the `vrep_ros_interface/CMakeLists.txt`:
 ```
 set(PKG_DEPS
   ... (many many other packages)
@@ -108,13 +129,15 @@ set(PKG_DEPS
 )
 ```
 
-**9.** If your compilation runs well, there is now a ros interface library to copy from your `catkin_ws` to the V-REP folder:
+
+**11.** If your compilation runs well, there is now a ros interface library to copy from your `catkin_ws` to the V-REP folder:
 ```
 $ cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosInterface.so $VREP_ROOT
 ```
 (Notice that, for further events, every time you add new custom ROS messages to the interface, you have to re-compile this library and re-copy it to `$VREP_ROOT`.
 
-**10.** Everything should be set up for now. To run the simulation, you should first (always!) run ROS:
+
+**12.** Everything should be set up for now. To run the simulation, you should first (always!) run ROS:
 ```
 $ roscore
 $ vrep
