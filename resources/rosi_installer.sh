@@ -75,6 +75,10 @@ source $HOME/$editorc
 echo -e "${BLUE}Copying vrep_ros_interface library to VREP_ROOT.${NC}"
 cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosInterface.so $vrep_folder
 
+# Copy ROSI model to vrep models folder
+echo -e "${BLUE}Copying ROSI model to V-REP robot models"
+cp $ROS_CATKIN_WS/src/rosi_defy/vrep_content/rosi_model.ttm $vrep_folder/models/robots/mobile/ROSI.ttm
+
 #sourcing again bashrc
 echo -e "${BLUE}Sourcing $HOME/$editorc.${NC}"
 source $HOME/$editorc
