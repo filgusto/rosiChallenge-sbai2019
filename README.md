@@ -1,4 +1,4 @@
-# sbai2019-rosiDefy
+# ROSI CHALLENGE - XIV SBAI
 
 This repository contains the ROS package and V-REP files for running the **ROSI CHALLENGE** simulation. 
 
@@ -14,7 +14,7 @@ We also would like to thank Marc Freese and the Coppelia Robotics team for provi
 
 This repository is structured as a ROS package. The folders organization is as follows:
 
-- `cenas` - Contains simulation cenes of the challenge. You may load them inside V-REP simulator.
+
 
 - `config` - Contains the **.yaml** files with simulation parameters. You may change them accordingly to your needs.
 
@@ -28,7 +28,7 @@ This repository is structured as a ROS package. The folders organization is as f
 
 - `script` - Example node in Python to control Rosi using a joystick. Code written with a Xbox 360 wireless joystick. 
 
-
+- `vrep_content` - Contains simulation cenes of the challenge. You may load them inside V-REP simulator.
 
 # Installation
 
