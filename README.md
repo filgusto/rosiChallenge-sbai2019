@@ -168,7 +168,7 @@ The standard is:
 
 As a rule of thumb, all variables are mapped in the International System of Units.
 
-## Rosi publishes to (you receive information throught them):
+## Rosi publishes to (you receive information from the robot):
 
 - `/rosi/arms_joints_position` - `<rosi_defy/RosiMovementArray>` - Rosi tracked arms position in \[radians\].
 
@@ -189,6 +189,8 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 - `/simulation/time` - `<std_msgs/Float32>` - V-REP simulation time in \[seconds\]
 
 - `/ur5/jointsPositionCurrentState` - `<rosi_defy/ManipulatorJoints>` - UR-5 robotic manipulator joints current position. 
+
+- `/ur5/forceTorqueSensorOutput` - `<geometry_msgs/TwistStamped>` - UR-5 Force/Torque sensor output. It gives two vector of linear and angular forces and torques, respectively. Axis order is **x**, **y**, **z**.
 
 ## Rosi subscribes to (you send commands to the robot):
 
