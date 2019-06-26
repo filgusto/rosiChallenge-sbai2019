@@ -8,7 +8,7 @@ One may find more info about SBAI in www.sbai2019.com.br.
 Additionally, the content here may be beneficial for robotics classes. There is a complete mobile robot model with divers actuators and sensor fully communicating with the ROS framework and an industrial belt conveyor scenario. 
 Feel free to use it for spreading the robotics knowledge in your classes! :)
 
-We also would like to thank Marc Freese and the Coppelia Robotics team for providing the V-REP simulator for this challenge.
+We also would like to thank Marc Freese and the Coppelia Robotics team for releasing the V-REP simulator for this challenge.
 
 # Package description
 
@@ -32,7 +32,9 @@ This repository is structured as a ROS package. The folders organization is as f
 
 # Installation
 
-The simulator was conceived using **Ubuntu 18.04**, **ROS Melodic**, and **V-REP 3.6.2 (rev.0)**. Another software versions might work, but they are not recommended nor officially supported for the competition. We consider that you have already installed these softwares.
+The simulator was conceived using **Ubuntu 18.04**, **ROS Melodic**, and **V-REP 3.6.2 (rev.0)**. Another software versions might work, but they are not recommended nor officially supported for the competition. 
+
+This installation instructions consider that you are already running **Ubuntu Version > 16.04** and **ROS Version > Kinect**. We will download V-REP in the following steps:
 
 ## Automatic installation
 
@@ -144,6 +146,20 @@ $ vrep
 ```
 Open the scene in `<rosi_defy>/cenas/` and play it. You should be able to see the simulator topics being published with `rostopic list`. Additionally, if you have a joystick, you can run the `rosi_joy.py` example node to see how the communication with the robot works.
 
+# Hello World!
+
+To first run your simulator, do the following:
+
+**1.** Open a new terminal and run `$ roscore` to enable ROSMASTER. You should **always** run the ROSMASTER before V-REP.
+
+**2.** In another terminal window, run `$ vrep`. This should work if you have created successfully V-REP alias on `.bashrc`. If the negative case, run it directly using `$ <vrep_folder>/vrep.sh`.
+
+**3.** Go to `File > Open Scene...` and locate the V-REP scenario in `<rosi_defy>/vrep_content/challenge_scenario.ttt`. 
+You have also available the ROSI model that can be directly loaded in another scenario. It can be also found in the V-REP model browser (simulator's left side column).
+
+**4.** Run the simulator by goint to `Simulation > Start simulation`. At this point, you should be able to see all ROSI topics running in ROS framework.
+
+**5.** You can find a ROS script example code in `<rosi_defy>/script/rosi_joy.py`. This node lets you control ROSI with a joystick (made with Xbox 360 controller). Besides, it is a good way to see the basics of the ROS<->ROSI interaction.
 
 
 # Simulation Parameters
@@ -168,7 +184,7 @@ The standard is:
 
 As a rule of thumb, all variables are mapped in the International System of Units.
 
-## Rosi publishes to (you receive information from the robot):
+## ROSI publishes to (you receive information from the robot):
 
 - `/rosi/arms_joints_position` - `<rosi_defy/RosiMovementArray>` - Rosi tracked arms position in \[radians\].
 
@@ -192,7 +208,7 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 
 - `/ur5/forceTorqueSensorOutput` - `<geometry_msgs/TwistStamped>` - UR-5 Force/Torque sensor output. It gives two vector of linear and angular forces and torques, respectively. Axis order is **x**, **y**, **z**.
 
-## Rosi subscribes to (you send commands to the robot):
+## ROSI subscribes to (you send commands to the robot):
 
 - `/rosi/command_arms_speed` - `<rosi_defy/RosiMovementArray>` - Sets the tracked arms angular velocity in \[radians/s\]. Command limits in \[-0.52, 0.52\] rad/s
 
@@ -201,12 +217,17 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 - `/rosi/command_kinect_joint` - `<std_msgs/Float32>`- Sets the kinect joint angular position set-point. Joint limits are \[-45°,45° \]. It has a built-in PID controller with maximum joint speed of |0.35| rad/s.
 
 - `/ur5/jointsPosTargetCommand` - `<rosi_defy/ManipulatorJoints>` - Sets the UR-5 joints desired angular position. Each joint has a built-in PID controller. One may find more UR-5 info in [here](https://www.universal-robots.com/media/50588/ur5_en.pdf).
-`
 
 
+# Contact
+If you have any doubts, suggestions, comments or compliments, you can reach:
+
+**Filipe Rocha**
+
+`filipe.rocha@itv.org` or `f.rocha41@gmail.com`.
 
 
+Also, pull requests are **always welcome**.
 
-
-
+## Have FUN!
 
