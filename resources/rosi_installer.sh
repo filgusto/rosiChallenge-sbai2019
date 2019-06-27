@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # support variables
-vrep_folder=$HOME'/.vrepTeste' #vrep folder location
+vrep_folder=$HOME'/.vrep' #vrep folder location
 
 #colors for echo
 GREEN='\033[0;32m'
@@ -30,7 +30,7 @@ fi
 # install some support packages
 echo -e "${BLUE}Installing some support packages\n${ORANGE}We need your sudo password here:${NC}"
 sudo apt update
-sudo apt install python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy
+sudo apt install -f python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy
 
 # downloads V-REP
 echo -e "\n${BLUE}Downloading V-REP from Coppelia Robotics server.${NC}"
@@ -43,7 +43,7 @@ mv ./V-REP_PRO_EDU_V3_6_2_Ubuntu18_04 $vrep_folder
 rm -rf ./V-REP_PRO_EDU_V3_6_2_Ubuntu18_04.tar.xz
 
 # insert some stuff into bashrc or zshrc
-echo -e "${BLUE}Adding some lines to $HOME/editorc.${NC}"
+echo -e "${BLUE}Adding some lines to $HOME/$editorc.${NC}"
 
 echo -e "\n#ROSI SIMULATION additions " >> $HOME/$editorc
 echo "export ROS_CATKIN_WS='$var_catkin_ws_folder'" >> $HOME/$editorc
@@ -52,6 +52,13 @@ echo "alias vrepTeste='$vrep_folder/vrep.sh'" >> $HOME/$editorc
 
 #sourcing again bashrc
 echo -e "${BLUE}Sourcing $HOME/$editorc.${NC}"
+source $HOME/$editorc
+
+#compiles rosi_defy package into catkin_ws
+echo -e "${BLUE}Compiling rosi_defy package to generate its messages.\nWe have to first clean your catkin_ws environment\n${ORANGE}Select 'YES' if asked to remove catkin_ws directories.${NC}"
+cd $ROS_CATKIN_WS
+catkin clean 
+catkin build
 source $HOME/$editorc
 
 #clones the vrep_ros_interface
@@ -65,9 +72,8 @@ sed -i '33i\  <depend>rosi_defy</depend>' $ROS_CATKIN_WS/src/vrep_ros_interface/
 sed -i '27i\    rosi_defy' $ROS_CATKIN_WS/src/vrep_ros_interface/CMakeLists.txt
 
 # cleaning and re-compiling the workspace
-echo -e "${BLUE}Cleaning and Re-compiling the ROS workspace\n${ORANGE}Select 'YES' when asked if you want to remove catkin_ws directories.${NC}"
+echo -e "${BLUE}Re-compiling the ROS workspace.${NC}"
 cd $ROS_CATKIN_WS
-catkin clean 
 catkin build
 source $HOME/$editorc
 
