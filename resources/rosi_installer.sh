@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# DELETE-ME #UNCOMMENT
-var_catkin_ws_folder="/home/filipe/ros/catkin_ws_rosi_defy"
-var_shell="bash"
-
 # support variables
 vrep_folder=$HOME'/.vrep' #vrep folder location
-
 
 #colors for echo
 GREEN='\033[0;32m'
@@ -34,12 +29,12 @@ fi
 
 # install some support packages
 echo -e "${BLUE}\nInstalling some support packages\n${ORANGE}We need your sudo password here:${NC}"
-#sudo apt update #UNCOMMENT
-#sudo apt install -f python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy #UNCOMMENT
+sudo apt update 
+sudo apt install -f python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy 
 
 # downloads V-REP
 echo -e "\n${BLUE}\nDownloading V-REP from Coppelia Robotics server.${NC}"
-#wget http://coppeliarobotics.com/files/V-REP_PRO_EDU_V3_6_2_Ubuntu18_04.tar.xz #UNCOMMENT
+wget http://coppeliarobotics.com/files/V-REP_PRO_EDU_V3_6_2_Ubuntu18_04.tar.xz 
 
 # extract, move and delete V-REP folder
 echo -e "\n${BLUE}Extracting V-REP to $vrep_folder.${NC}"
