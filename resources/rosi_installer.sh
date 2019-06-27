@@ -15,10 +15,10 @@ echo -e "${GREEN}=========================================${NC}"
 echo -e "${BLUE}** ROSI CHALLENGE SIMULATOR INSTALLER **${NC}\n"
 
 echo -e "${BLUE}First, tell me where is located your catkin_ws folder (example: /home/john/vrep):${NC}"
-#read var_catkin_ws_folder
+read var_catkin_ws_folder
 
 echo -e "\n${BLUE}Do you use bash or zsh? (answer: bash, zsh)${NC}"
-#read var_shell
+read var_shell
 
 # treats the rc file
 if [[ $var_shell == "zsh" ]]; then
