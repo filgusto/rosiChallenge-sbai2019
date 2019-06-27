@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 echo -e "${GREEN}=========================================${NC}"
 echo -e "${BLUE}** ROSI CHALLENGE SIMULATOR INSTALLER **${NC}\n"
 
-echo -e "${BLUE}First, tell me where is located your catkin_ws folder (example: /home/john/vrep):${NC}"
+echo -e "${BLUE}First, tell me where is located your catkin_ws folder (example: /home/john/catkin_ws):${NC}"
 read var_catkin_ws_folder
 
 echo -e "\n${BLUE}Do you use bash or zsh? (answer: bash, zsh)${NC}"
