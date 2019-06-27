@@ -219,7 +219,10 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 - `/ur5/jointsPosTargetCommand` - `<rosi_defy/ManipulatorJoints>` - Sets the UR-5 joints desired angular position. Each joint has a built-in PID controller. One may find more UR-5 info in [here](https://www.universal-robots.com/media/50588/ur5_en.pdf).
 
 
-# Contact
+# I have found something wrong!
+
+Great! Please, open a new **issue** directly on this repository, or send your **pull request**.
+
 If you have any doubts, suggestions, comments or compliments, you can reach:
 
 **Filipe Rocha**
@@ -227,7 +230,6 @@ If you have any doubts, suggestions, comments or compliments, you can reach:
 `filipe.rocha@itv.org` or `f.rocha41@gmail.com`.
 
 
-Also, pull requests are **always welcome**.
 
 ## Have FUN!
 
