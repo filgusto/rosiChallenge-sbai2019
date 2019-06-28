@@ -1,5 +1,7 @@
 # ROSI CHALLENGE - XIV SBAI
 
+![rosi_banner](https://raw.githubusercontent.com/filRocha/rosiChallenge-sbai2019/master/resources/banner.png)
+
 This repository contains the ROS package and V-REP files for running the **ROSI CHALLENGE** simulation. 
 
 The final stage of the competition will occur on the **XIV SBAI**, to be held in Ouro Preto (Brazil) in october 2019.
@@ -10,11 +12,16 @@ Feel free to use it for spreading the robotics knowledge in your classes! :)
 
 We also would like to thank Marc Freese and the Coppelia Robotics team for releasing the V-REP simulator for this challenge.
 
+# DISCLAIMER
+
+**This is the beta version of the simulator. 
+To those interested in competing, you can download this version to already begin your code's implementation.
+Keep up with code's update.
+The competition rules and inscription will be available soon on the SBAI website.**
+
 # Package description
 
 This repository is structured as a ROS package. The folders organization is as follows:
-
-
 
 - `config` - Contains the **.yaml** files with simulation parameters. You may change them accordingly to your needs.
 
