@@ -25,28 +25,22 @@ if [ ! -d $var_catkin_ws_folder ]; then
 	exit 1
 fi
 
-#reads and treats the zsh existence
-echo -e "\n${BLUE}Do you have zsh? (answer: y, n)${NC}"
-read var_shell
-
-# treats the rc file
-if [[ $var_shell == "y" ]]; then
-	editorc=".zshrc"
-elif [[ $var_shell == "n" ]]; then
-	editorc=".bashrc"
-else 
-	echo -e "${RED}This input is not valid. Stopping now this script.${NC}"
-	exit 1
+# searches for the .zsh file
+if [ -f "$HOME/.zshrc" ]; then
+	echo -e "${ORANGE}$HOME/.zshrc file found!${NC}"
+	var_shell="y"
+else
+	var_shell="n"
 fi
 
 # install some support packages
 echo -e "${BLUE}\nInstalling some support packages\n${ORANGE}(We might need your sudo password here)${NC}"
-#sudo apt update #UNCOMMENT
-#sudo apt install -f python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy #UNCOMMENT
+sudo apt update #UNCOMMENT
+sudo apt install -f python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy #UNCOMMENT
 
 # downloads V-REP
 echo -e "\n${BLUE}\nDownloading V-REP from Coppelia Robotics server.${NC}"
-#wget http://coppeliarobotics.com/files/V-REP_PRO_EDU_V3_6_2_Ubuntu18_04.tar.xz #UNCOMMENT
+wget http://coppeliarobotics.com/files/V-REP_PRO_EDU_V3_6_2_Ubuntu18_04.tar.xz #UNCOMMENT
 
 # extract, move and delete V-REP folder
 echo -e "\n${BLUE}Extracting V-REP to $vrep_folder.${NC}"
