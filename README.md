@@ -18,6 +18,9 @@ We also would like to thank Marc Freese and the Coppelia Robotics team for relea
 To those interested in competing, you can download this version to see what is available and to start basic modules implementations.
 However, keep up with major code's update. The competition rules (along with the inspection task description) and inscription will be available soon on the SBAI website.**
 
+**Remember that your solution has to be implemented in the ROS (Robot Operating System) package/nodes format. The code has to be well structured, readable and cataloged as it will be open-source available. 
+On the competition stage, the simulation will run on a server computer, and each teams' package will run on another computer. Be careful not to change any simulation parameters as the official one is the only one considered for the competition.**
+
 # Package description
 
 This repository is structured as a ROS package. The folders organization is as follows:
