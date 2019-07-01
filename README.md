@@ -15,9 +15,8 @@ We also would like to thank Marc Freese and the Coppelia Robotics team for relea
 # DISCLAIMER
 
 **This is the beta version of the simulator. 
-To those interested in competing, you can download this version to already begin your code's implementation.
-Keep up with code's update.
-The competition rules and inscription will be available soon on the SBAI website.**
+To those interested in competing, you can download this version to see what is available and to start basic modules implementations.
+However, keep up with major code's update. The competition rules (along with the inspection task description) and inscription will be available soon on the SBAI website.**
 
 # Package description
 
