@@ -11,7 +11,7 @@ Additionally, the content here may be beneficial for robotics classes. There is 
 Feel free to use it for spreading the robotics knowledge in your classes! :)
 
 We would like to thank Marc Freese and the Coppelia Robotics team for releasing the V-REP simulator for this challenge.
-Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Coelho Ferraz, and Wagner Ferreira Andrade.
+Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Coelho Ferraz, Raphael Pereira Figueiredo da Silva, and Wagner Ferreira Andrade.
 
 # DISCLAIMER
 
