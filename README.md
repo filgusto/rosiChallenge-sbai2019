@@ -10,7 +10,8 @@ One may find more info about SBAI in www.sbai2019.com.br.
 Additionally, the content here may be beneficial for robotics classes. There is a complete mobile robot model with divers actuators and sensor fully communicating with the ROS framework and an industrial belt conveyor scenario. 
 Feel free to use it for spreading the robotics knowledge in your classes! :)
 
-We also would like to thank Marc Freese and the Coppelia Robotics team for releasing the V-REP simulator for this challenge.
+We would like to thank Marc Freese and the Coppelia Robotics team for releasing the V-REP simulator for this challenge.
+Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Coelho Ferraz, and Wagner Ferreira Andrade.
 
 # DISCLAIMER
 
