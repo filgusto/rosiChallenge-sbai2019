@@ -59,7 +59,7 @@ $ git clone https://github.com/filRocha/sbai2019-rosiDefy rosi_defy
 **2.** Navigate to `<rosi_defy>/resources` folder and run the following:
 ```
 $ cd <catkin_ws>/src/rosi_defy/resources/
-$ chmod u+x ./rosi_partial.sh
+$ chmod u+x ./rosi_installer.sh 
 $ ./rosi_installer.sh
 ```
 This script **should do all needed configurations** to run V-REP alongside ROS. Pay attention to its blue messages as they may contain important information. 
