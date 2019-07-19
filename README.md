@@ -230,11 +230,12 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 
 
 # I have found something wrong!
-
 Great! Please, open a new **issue** directly on this repository, or send your **pull request**.
 
-If you have any doubts, suggestions, comments or compliments, you can reach:
+Doubts must also be treated as an **issue** !
+======
 
+If you have any suggestions, comments or compliments, you can reach:
 **Filipe Rocha**
 
 `filipe.rocha@itv.org` or `f.rocha41@gmail.com`.
