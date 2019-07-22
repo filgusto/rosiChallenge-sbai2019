@@ -42,9 +42,9 @@ This repository is structured as a ROS package. The folders organization is as f
 
 # Installation
 
-The simulator was conceived using **Ubuntu 18.04**, **ROS Melodic**, and **V-REP 3.6.2 (rev.0)**. Another software versions might work, but they are not recommended nor officially supported for the competition. 
+The simulator was conceived using **Ubuntu 18.4.2**, **ROS Melodic**, and **V-REP 3.6.2 (rev.0)**. Another software versions might work, but they are not recommended nor officially supported for the competition. 
 
-This installation instructions consider that you are already running **Ubuntu Version > 16.04** and **ROS Version > Kinect**. We will download V-REP in the following steps:
+This installation instructions consider that you are already running **Ubuntu Version > 18.4.2** and **ROS Version > Kinect**. We will download V-REP in the following steps:
 
 ## Automatic installation
 
