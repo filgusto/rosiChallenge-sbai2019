@@ -28,8 +28,6 @@ This repository is structured as a ROS package. The folders organization is as f
 
 - `config` - Contains the **.yaml** files with simulation parameters. You may change them accordingly to your needs.
 
-- `dev` - Useful **.sh** files for testing the simulator.
-
 - `launch` - Contains a ROS launch file example. Notice that **rosi_joy.launch** loads the parameters file from `config` folder.
 
 - `msg` - Message files needed to interact with the Rosi simulated model.
@@ -38,7 +36,7 @@ This repository is structured as a ROS package. The folders organization is as f
 
 - `script` - Example node in Python to control Rosi using a joystick. Code written with a Xbox 360 wireless joystick. 
 
-- `vrep_content` - Contains simulation cenes of the challenge. You may load them inside V-REP simulator.
+- `vrep_content` - Contains the simulation scenes for the challenge. You may load them inside V-REP simulator.
 
 # Installation
 
@@ -127,7 +125,7 @@ $ catkin build
 ```
 
 
-**10.** If your compilation runs well, there is now a ros interface library called `libv_repExtRosInterface.so`. You must copy it to the V-REP folder:
+**10.** If your compilation runs well, there is now a ros interface library called `libv_repExtRosInterface.so` on `<catkin_ws>/dev/lib/` folder. You must copy it to the V-REP folder:
 ```
 $ cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosInterface.so $VREP_ROOT
 ```
@@ -141,18 +139,20 @@ $ vrep
 ```
 Open the scene in `<rosi_defy>/cenas/` and play it. You should be able to see the simulator topics being published with `rostopic list`. Additionally, if you have a joystick, you can run the `rosi_joy.py` example node to see how the communication with the robot works.
 
+**NOTICE** that you have to run the `roscore` **ALWAYS** before `vrep` in order to work. If you stop ROS master, you have to close V-REP and run it all again.
+
 # Hello World!
 
 To first run your simulator, do the following:
 
-**1.** Open a new terminal and run `$ roscore` to enable ROSMASTER. You should **always** run the ROSMASTER before V-REP.
+**1.** Open a new terminal and run `$ roscore` to enable ROSMASTER. You **always** have to run the ROS master before V-REP.
 
 **2.** In another terminal window, run `$ vrep`. This should work if you have created successfully V-REP alias on `.bashrc`. If the negative case, run it directly using `$ <vrep_folder>/vrep.sh`.
 
 **3.** Go to `File > Open Scene...` and locate the V-REP scenario in `<rosi_defy>/vrep_content/challenge_scenario.ttt`. 
 You have also available the ROSI model that can be directly loaded in another scenario. It can be also found in the V-REP model browser (simulator's left side column).
 
-**4.** Run the simulator by goint to `Simulation > Start simulation`. At this point, you should be able to see all ROSI topics running in ROS framework.
+**4.** Run the simulator by going to `Simulation > Start simulation`. At this point, you should be able to see all ROSI topics running in ROS framework.
 
 **5.** You can find a ROS script example code in `<rosi_defy>/script/rosi_joy.py`. This node lets you control ROSI with a joystick (made with Xbox 360 controller). Besides, it is a good way to see the basics of the ROS<->ROSI interaction.
 
@@ -169,7 +169,11 @@ You can adjust the following flags:
 
 - `velodyne_processing` - `Boolean` - If your code do not rely on Velodyne data, you can disable this sensor here and speed up the simulation.
 
-- `kinect_processing` - `Boolean` - If your code do not rely on Kinect data, you can disable this sensore here and speed up the simulation.
+- `kinect_processing` - `Boolean` - If your code do not rely on Kinect data, you can disable this sensor here and speed up the simulation.
+
+- `hokuyo_processing` - `Boolean` - If your code do not rely on Hokuyo data, you can disable this sensor here and speed up the simulation.
+
+- `hokuyo_lines` - `Boolean` - Turn this ON if you want to see hokuyo detection lines. 
 
 # ROSI2ROS
 
