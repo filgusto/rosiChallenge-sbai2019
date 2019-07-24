@@ -197,7 +197,7 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 
 - `/sensor/velodyne` - `<sensor_msgs/PointCloud>` - Emulated Velodyne output.
 
-- `/sensor/hokuyo` - `<rosi_defy/HokuyoReading>` - Emulated hokuyo output.
+- `/sensor/hokuyo` - `<rosi_defy/HokuyoReading>` - Emulated hokuyo output. It gives a vector of 3D coordinates of detected point with respect to hokuyo.
 
 - `/simulation/time` - `<std_msgs/Float32>` - V-REP simulation time in \[seconds\]
 
