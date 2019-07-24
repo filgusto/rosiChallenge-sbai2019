@@ -1,7 +1,7 @@
 <launch>
 
 	<!-- running the joystick node -->
-	<!-- node name="joy_node" pkg="joy" type="joy_node" respawn="true" / -->
+	<node name="joy_node" pkg="joy" type="joy_node" respawn="true" />
 
 	<!-- running the rosi joystick example node -->
 	<node name="rosi_joy" pkg="rosi_defy" type="rosi_joy.py" respawn="true"/>
