@@ -20,3 +20,8 @@
   # disable it for faster simulation (but no hokuyo data)
   # possible values: true, false.
   hokuyo_processing: true
+
+  # Hokuyo drawing lines 
+  # enable it for seeing hokuyo lines
+  # possible values: true, false.
+  hokuyo_lines: false
