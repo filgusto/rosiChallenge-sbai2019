@@ -1,3 +1,3 @@
 Header header
-int64[] joint_variable
+float32[] joint_variable
 

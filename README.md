@@ -104,7 +104,7 @@ $ source $HOME/.bashrc
 
 9.1 Insert their namespace and names in `<vrep_ros_interface>/meta/messages.txt` file:
 ```
-$ echo -e "rosi_defy/ManipulatorJoints\nrosi_defy/RosiMovement\nrosi_defy/RosiMovementArray" >> $ROS_CATKIN_WS/src/vrep_ros_interface/meta/messages.txt
+$ echo -e "rosi_defy/ManipulatorJoints\nrosi_defy/RosiMovement\nrosi_defy/RosiMovementArray\nrosi_defy/HokuyoReading" >> $ROS_CATKIN_WS/src/vrep_ros_interface/meta/messages.txt
 ```
 
 9.2 Tell `vrep_ros_interface`that it depends on the `rosi_defy` package by adding 
