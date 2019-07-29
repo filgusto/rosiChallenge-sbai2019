@@ -15,9 +15,9 @@ Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Co
 
 # DISCLAIMER
 
-**Remember that your solution has to be implemented in the ROS (Robot Operating System) package/nodes format. The code has to be well structured, readable and cataloged as it will be open-source available. 
+**Remember that your solution has to be implemented in the ROS (Robot Operating System) package/nodes format. The code has to be well structured, readable and cataloged as it will be open-source available.**
 
-On the competition stage, the simulation will run on a server computer, and each teams' package will run on another computer. Be careful not to change any simulation parameters as the official one is the only one considered for the competition.**
+**On the competition stage, the simulation will run on a server computer, and each teams' package will run on another computer. Be careful not to change any simulation parameters as the official one is the only one considered for the competition.**
 
 **The ROSI CHALLENGE inscriptions are available in [this form](https://forms.gle/2Zcy8dJjXGBqGNKS9).**
 
