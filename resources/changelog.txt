@@ -1,0 +1,11 @@
+ROSI CHALLENGE CHANGELOG
+
+This file list all official changes on rosi challenge codes or regulation.
+
+---------------------------------------------------------------------------------
+2019-06-29 - REGULATION AND REGISTRATION SYSTEM
+
+The regulation and changelog documents are available on the official repository.
+
+
+---------------------------------------------------------------------------------
