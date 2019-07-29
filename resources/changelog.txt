@@ -1,6 +1,6 @@
 ROSI CHALLENGE CHANGELOG
 
-This file list all official changes on rosi challenge codes or regulation.
+This file list all official major changes on rosi challenge codes or regulation.
 
 =================================================================================
 
