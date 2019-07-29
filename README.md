@@ -22,7 +22,7 @@ Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Co
 **The ROSI CHALLENGE inscriptions are available in [this form](https://forms.gle/2Zcy8dJjXGBqGNKS9).**
 
 **Be sure you have read and understood all of the challenge's rules available in 
-[HERE](hahahha)**
+[HERE](https://github.com/filRocha/rosiChallenge-sbai2019/blob/master/resources/regulamento_rosiChallenge.pdf)**
 
 # Package description
 
