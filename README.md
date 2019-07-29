@@ -15,12 +15,14 @@ Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Co
 
 # DISCLAIMER
 
-**This is the beta version of the simulator. 
-To those interested in competing, you can download this version to see what is available and to start basic modules implementations.
-However, keep up with major code's update. The competition rules (along with the inspection task description) and inscription will be available soon on the SBAI website.**
-
 **Remember that your solution has to be implemented in the ROS (Robot Operating System) package/nodes format. The code has to be well structured, readable and cataloged as it will be open-source available. 
+
 On the competition stage, the simulation will run on a server computer, and each teams' package will run on another computer. Be careful not to change any simulation parameters as the official one is the only one considered for the competition.**
+
+**The ROSI CHALLENGE inscriptions are available in [this form](https://forms.gle/2Zcy8dJjXGBqGNKS9).**
+
+**Be sure you have read and understood all of the challenge's rules available in 
+[HERE](hahahha)**
 
 # Package description
 
