@@ -91,7 +91,7 @@ $ sudo apt install python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator r
 ```
 
 
-**8.** We have just installed a new `catkin build` tool. If you use `catkin_make`, you have to clean your workspace and perform a fresh new compilation:
+**8.** We have just installed a new tool for compiling the catkin workspace: `catkin build`. If you use `catkin_make`, you have to clean your workspace and perform a fresh new compilation:
 ```
 $ cd $ROS_CATKIN_WS
 $ catkin clean
@@ -99,6 +99,7 @@ $ catkin build
 $ source $HOME/.bashrc
 ```
 
+Notice that you may not use `catkin_make` to compile your workspace anymore.
 
 **9.** Some messages from our `rosi_defy` package should be referenced in the `vrep_ros_interface` package. To do that:
 
@@ -139,7 +140,9 @@ $ cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosInterface.so $VREP_ROOT
 $ roscore
 $ vrep
 ```
-Open the scene in `<rosi_defy>/cenas/` and play it. You should be able to see the simulator topics being published with `rostopic list`. Additionally, if you have a joystick, you can run the `rosi_joy.py` example node to see how the communication with the robot works.
+Open the scene `<rosi_defy>/vrep_content/challenge_scenario.ttt` in V-REP and play it. You should be able to see the simulator topics being published with `rostopic list`. 
+
+Additionally, if you have a joystick, you can run the `rosi_joy.py` example node to see how the communication with the robot works.
 
 **NOTICE** that you have to run the `roscore` **ALWAYS** before `vrep` in order to work. If you stop ROS master, you have to close V-REP and run it all again.
 
