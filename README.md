@@ -44,10 +44,27 @@ This repository is structured as a ROS package. The folders organization is as f
 
 The simulator was conceived using **Ubuntu 18.4.2**, **ROS Melodic**, and **V-REP 3.6.2 (rev.0)**. Another software versions might work, but they are not recommended nor officially supported for the competition. 
 
+## Installation advices
+
+By covention on this installation steps, all boxes starting with a `$` mark means that you should run the command on the terminal. 
+
+As an example:
+``` 
+$ sudo apt update
+```
+The above line means that you should run the command `sudo apt update` on your terminal. **Notice that** the `$` stands for a terminal command input and **do not** belongs to the command line syntax itself.
+
+If you want to directly copy and paste this `README.md` commands on the terminal (the clever way), remember that you **should not** copy the `$` mark, and the keyboard shortcut to paste on the terminal is `CTRL + SHIFT + V`.
+
+The common issues for each step are directly addressed in a **Troubleshooting** remark on the end of the step instructions.
+
+## Installation steps
+
 Follow the steps below to configure your V-REP along with ROS:
 
 
-**1.** Clone and download this repository package to your `catkin_ws/src` folder with the name `rosi_defy`:
+**1.** Clone and download this repository package to your **ROS Workspace src folder** (`../catkin_ws/src`) folder with the name `rosi_defy`:
+
 ```
 $ git clone https://github.com/filRocha/sbai2019-rosiDefy rosi_defy
 ``` 
@@ -62,6 +79,7 @@ $ git clone https://github.com/filRocha/sbai2019-rosiDefy rosi_defy
 ```
 $ echo "export ROS_CATKIN_WS='<path_to_your_catkin_ws_folder>'" >> $HOME/.bashrc
 $ echo "export VREP_ROOT='<path_to_your_vrep_folder>'" >> $HOME/.bashrc
+$ echo "source $ROS_CATKIN_WS/devel/setup.bash" >> $HOME/.bashrc
 $ echo "alias vrep=$VREP_ROOT/vrep.sh" >> ~/.bashrc
 $ source $HOME/.bashrc
 ```
@@ -70,11 +88,11 @@ Remember to insert the path to your CATKIN_WS and V-REP folder in this command.
 (All instructions consider that you use `bash`. If you use `.zsh`, you know what to do ;)
 
 
-**5.** Test the V-REP functionality by running:
+**5.** Test the V-REP functionality by running directly on your terminal the following command:
 ```
 $ vrep
 ```
-(Notice that you have created this command on the last step)
+(Notice that you have created this command on the last step using the `alias` command on your `.bashrc`)
 
 
 **6.** Clone recursively the V-REP/ROS interface to your `catkin_ws/src`:
@@ -100,6 +118,9 @@ $ source $HOME/.bashrc
 ```
 
 Notice that you may not use `catkin_make` to compile your workspace anymore.
+
+**Troubleshooting**: 
+- The `catkin clean` command just deletes the `..catkin_ws/devel` and `..catkin_ws/build` folders from your ROS Workspace. If the `catkin clean` command returns an error (e.g. the workspace was not correctly indentified), you can just remove those folders **manually**.
 
 **9.** Some messages from our `rosi_defy` package should be referenced in the `vrep_ros_interface` package. To do that:
 
