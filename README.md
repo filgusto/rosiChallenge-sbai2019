@@ -17,6 +17,8 @@ Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Co
 
 **Remember that your solution has to be implemented in the ROS (Robot Operating System) package/nodes format. The code has to be well structured, readable and cataloged as it will be open-source available.**
 
+**DO FORK THIS REPOSITORY only if are willing to propose corrections/improvements to the simulator. YOUR SOLUTION to the challenge has to be created on a CLEAN GITHUB REPOSITORY!**
+
 **On the competition stage, the simulation will run on a server computer, and each teams' package will run on another computer. Be careful not to change any simulation parameters as the official one is the only one considered for the competition.**
 
 **The ROSI CHALLENGE inscriptions are available in [this form](https://forms.gle/2Zcy8dJjXGBqGNKS9).**
