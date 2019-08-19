@@ -5,15 +5,28 @@ This file list all official major changes on rosi challenge codes or regulation.
 =================================================================================
 
 ---------------------------------------------------------------------------------
+2019-08-19 - REGULATION AND REGISTRATION DATES CHANGES
+
+- The inscription date was extended until 2019-august-26.
+
+Regulation changes (V1.1):
+-- Explicitly indicated that the teams solutions have to be uploaded to a clean github repository.
+-- The teams can now indicate a roslaunch file and/or a .sh file to run its solution.
+-- Added Hector Azpúrua as organizer.
+
+
+---------------------------------------------------------------------------------
 2019-06-29 - REGULATION AND REGISTRATION SYSTEM
 
-The regulation 'regulamento_rosiChallenge.pdf' V1.0 and changelog 'changelog.txt' documents are available on the official repository.
+- The regulation 'regulamento_rosiChallenge.pdf' V1.0 and changelog 'changelog.txt' documents are available on the official repository.
 
 
 ---------------------------------------------------------------------------------
 2019-06-25 - HOKUYO ADDITION
 
-We have added a planar laser Hokuyo on UR-5 tool. It is already publishing in ROS topics.
+- We have added a planar laser Hokuyo on UR-5 tool. It is already publishing in ROS topics.
 
 
 ---------------------------------------------------------------------------------
+
+
