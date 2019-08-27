@@ -1,25 +1,89 @@
 <!-- ROSI URDF MODEL -->
 <robot name="rosi">
 
-	<!-- Defining links -->
+	<!-- Defining arm links -->
 	<link name="base_link">
 		<origin xyz="0 0 0" rpy="0 0 0"/> 
 		<visual>
 			<geometry>
-				<mesh filename="package://urdf/meshes/base_link.dae" />
+				<mesh filename="package://rosi_defy/urdf/meshes/rosi_base.stl" />
 			</geometry>
 		</visual>
 	</link>
 
+	<link name="arm_1">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/arm.stl" />
+			</geometry>
+			<origin xyz="0,1805 0 0" rpy="0 0 0" />
+		</visual>
+	</link>
 
-	<link name="arm_1" />
-	<link name="arm_2" />
-	<link name="arm_3" />
-	<link name="arm_4" />
-	<link name="wheel_1" />
-	<link name="wheel_2" />
-	<link name="wheel_3" />
-	<link name="wheel_4" />
+	<link name="arm_2">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/arm.stl" />
+			</geometry>
+			<origin xyz="-0,1805 0 0" rpy="0 0 3,14" />
+		</visual>
+	</link>
+
+	<link name="arm_3">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/arm.stl" />
+			</geometry>
+			<origin xyz="0,1805 0 0" rpy="0 0 0" />
+		</visual>
+	</link>
+
+	<link name="arm_4">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/arm.stl" />
+			</geometry>
+			<origin xyz="-0,1805 0 0" rpy="0 0 3,14" />
+		</visual>
+	</link>
+
+	<!-- Defining wheel links -->
+	<link name="wheel_1">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/wheel.stl" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+		</visual>
+	</link>
+
+	<link name="wheel_2">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/wheel.stl" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+		</visual>
+	</link>
+
+	<link name="wheel_3">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/wheel.stl" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+		</visual>
+	</link>
+
+	<link name="wheel_4">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/wheel.stl" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+		</visual>
+	</link>
+
 	<!-- link name="velodyne" /-->
 	<!-- link name="kinect" /-->
 
