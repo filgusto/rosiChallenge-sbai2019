@@ -1,6 +1,6 @@
 # ROSI CHALLENGE - XIV SBAI
 
-![rosi_banner](https://raw.githubusercontent.com/filRocha/rosiChallenge-sbai2019/master/resources/banner.png)
+![rosi_banner](https://raw.githubusercontent.com/filRocha/rosiChallenge-sbai2019/master/resources/banner2.png)
 
 This repository contains the ROS package and V-REP files for running the **ROSI CHALLENGE** simulation. 
 
