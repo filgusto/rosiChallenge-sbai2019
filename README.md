@@ -21,8 +21,6 @@ Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Co
 
 **On the competition stage, the simulation will run on a server computer, and each teams' package will run on another computer. Be careful not to change any simulation parameters as the official one is the only one considered for the competition.**
 
-**The ROSI CHALLENGE inscriptions are available in [this form](https://forms.gle/2Zcy8dJjXGBqGNKS9).**
-
 **Be sure you have read and understood all of the challenge's rules available in 
 [resources/regulamento_rosiChallenge.pdf](https://github.com/filRocha/rosiChallenge-sbai2019/blob/master/resources/regulamento_rosiChallenge.pdf)**
 
@@ -39,6 +37,8 @@ This repository is structured as a ROS package. The folders organization is as f
 - `resources` - General support files.
 
 - `script` - Example node in Python to control Rosi using a joystick. Code written with a Xbox 360 wireless joystick. 
+
+- `urdf` - Contains ROSI URDF model.
 
 - `vrep_content` - Contains the simulation scenes for the challenge. You may load them inside V-REP simulator.
 

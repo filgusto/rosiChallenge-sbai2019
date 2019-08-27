@@ -5,9 +5,9 @@ This file list all official major changes on rosi challenge codes or regulation.
 =================================================================================
 
 ---------------------------------------------------------------------------------
-2019-08-26 - 
+2019-08-27 - URDF ADDITION and  
 
-
+- Created Rosi URDF model and `urdf` folder
 
 - in './vrep_content/rosi_model.ttm': 
 	- changed robot default coordinates to [0,0, 2.41e-1]m.
@@ -16,9 +16,11 @@ This file list all official major changes on rosi challenge codes or regulation.
 
 - in './README.md'
 	- added `ros-$ROS_DISTRO-joint-state-publisher` package as common install ROS package.
+	- removed inscription link.
+	- added `urdf` folder description.
 
-- Created Rosi URDF model.
-
+- in './resources/regulamento_rosiChallenge':
+	- changed font colors.
 
 
 ---------------------------------------------------------------------------------
