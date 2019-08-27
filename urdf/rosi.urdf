@@ -84,6 +84,25 @@
 		</visual>
 	</link>
 
+	<!-- Defining sensors links -->
+
+	<link name="velodyne">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/velodyne.stl" />
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="kinect">
+		<visual>
+			<geometry>
+				<mesh filename="package://rosi_defy/urdf/meshes/kinect.stl" />
+			</geometry>
+			<origin xyz="-0.023 0 0" rpy="-1,57 0 1,57" />
+		</visual>
+	</link>
+
 	<!-- link name="velodyne" /-->
 	<!-- link name="kinect" /-->
 
@@ -142,6 +161,20 @@
 		<parent link="base_link" />
 		<child link="wheel_4" />
 		<origin xyz="-0.3152 0.2880 -0.0993" rpy="-1.57 3.14 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_velodyne" type="fixed">
+		<parent link="base_link" />
+		<child link="velodyne" />
+		<origin xyz="0.242 0.002 0.1655" rpy="0 0.26 0" />
+	</joint>
+
+	<joint name="joint_kinect" type="revolute">
+		<parent link="base_link" />
+		<child link="kinect" />
+		<origin xyz="0.3 0 0.009" rpy="1.57 1.57 0" />
+		<limit effort="30" velocity="0.79" lower="-0.79" upper="0.79" />
 		<axis xyz="0 0 1" />
 	</joint>
 
