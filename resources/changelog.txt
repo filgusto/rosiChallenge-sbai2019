@@ -13,6 +13,9 @@ This file list all official major changes on rosi challenge codes or regulation.
 	- changed robot default coordinates to [0,0, 2.41e-1]m.
 	- changed 'arm_dynX' -> 'Scene Object Properties -> Select base of model instead' box trully checked.
 
+- in './README.md'
+	- added `ros-$ROS_DISTRO-joint-state-publisher` package as common install ROS package.
+
 
 
 ---------------------------------------------------------------------------------

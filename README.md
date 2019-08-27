@@ -107,7 +107,7 @@ $ git clone --recursive https://github.com/CoppeliaRobotics/v_repExtRosInterface
 
 **7.** Install some support packages:
 ```
-$ sudo apt install python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy
+$ sudo apt install python-catkin-tools xsltproc ros-$ROS_DISTRO-brics-actuator ros-$ROS_DISTRO-tf2-sensor-msgs ros-$ROS_DISTRO-joy ros-$ROS_DISTRO-joint-state-publisher
 ```
 
 

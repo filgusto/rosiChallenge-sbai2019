@@ -1,0 +1,84 @@
+<!-- ROSI URDF MODEL -->
+<robot name="rosi">
+
+	<!-- Defining links -->
+	<link name="base_link">
+		<origin xyz="0 0 0" rpy="0 0 0"/> 
+		<visual>
+			<geometry>
+				<mesh filename="package://urdf/meshes/base_link.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="arm_1" />
+	<link name="arm_2" />
+	<link name="arm_3" />
+	<link name="arm_4" />
+	<link name="wheel_1" />
+	<link name="wheel_2" />
+	<link name="wheel_3" />
+	<link name="wheel_4" />
+	<!-- link name="velodyne" /-->
+	<!-- link name="kinect" /-->
+
+	<!-- Defining arms joints -->
+	<joint name="joint_arm_1" type="continuous">
+		<parent link="base_link" />
+		<child link="arm_1" />
+		<origin xyz="0.3152 -0.2210 -0.0993" rpy="1.57 0 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_arm_2" type="continuous">
+		<parent link="base_link" />
+		<child link="arm_2" />
+		<origin xyz="-0.3152 -0.2210 -0.0993" rpy="1.57 0 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_arm_3" type="continuous">
+		<parent link="base_link" />
+		<child link="arm_3" />
+		<origin xyz="0.3152 0.2210 -0.0993" rpy="-1.57 0 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_arm_4" type="continuous">
+		<parent link="base_link" />
+		<child link="arm_4" />
+		<origin xyz="-0.3152 0.2210 -0.0993" rpy="-1.57 0 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<!-- Defining wheel joints -->
+	<joint name="joint_wheel_1" type="continuous">
+		<parent link="base_link" />
+		<child link="wheel_1" />
+		<origin xyz="0.3152 -0.2880 -0.0993" rpy="1.57 0 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_wheel_2" type="continuous">
+		<parent link="base_link" />
+		<child link="wheel_2" />
+		<origin xyz="-0.3152 -0.2880 -0.0993" rpy="1.57 0 0" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_wheel_3" type="continuous">
+		<parent link="base_link" />
+		<child link="wheel_3" />
+		<origin xyz="0.3152 0.2880 -0.0993" rpy="-1.57 0 3.14" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<joint name="joint_wheel_4" type="continuous">
+		<parent link="base_link" />
+		<child link="wheel_4" />
+		<origin xyz="-0.3152 0.2880 -0.0993" rpy="-1.57 0 3.14" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+</robot>
