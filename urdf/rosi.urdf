@@ -134,14 +134,14 @@
 	<joint name="joint_wheel_3" type="continuous">
 		<parent link="base_link" />
 		<child link="wheel_3" />
-		<origin xyz="0.3152 0.2880 -0.0993" rpy="-1.57 0 3.14" />
+		<origin xyz="0.3152 0.2880 -0.0993" rpy="-1.57 3.14 0" />
 		<axis xyz="0 0 1" />
 	</joint>
 
 	<joint name="joint_wheel_4" type="continuous">
 		<parent link="base_link" />
 		<child link="wheel_4" />
-		<origin xyz="-0.3152 0.2880 -0.0993" rpy="-1.57 0 3.14" />
+		<origin xyz="-0.3152 0.2880 -0.0993" rpy="-1.57 3.14 0" />
 		<axis xyz="0 0 1" />
 	</joint>
 

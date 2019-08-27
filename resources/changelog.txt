@@ -16,6 +16,8 @@ This file list all official major changes on rosi challenge codes or regulation.
 - in './README.md'
 	- added `ros-$ROS_DISTRO-joint-state-publisher` package as common install ROS package.
 
+- Created Rosi URDF model.
+
 
 
 ---------------------------------------------------------------------------------
