@@ -20,7 +20,7 @@ This file list all official major changes on rosi challenge codes or regulation.
 	- added `urdf` folder description.
 
 - in './resources/regulamento_rosiChallenge':
-	- changed font colors.
+	- Regulation (V1.2): changed font colors.
 
 
 ---------------------------------------------------------------------------------
