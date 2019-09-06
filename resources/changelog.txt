@@ -11,6 +11,8 @@ This file list all official major changes on rosi challenge codes or regulation.
 	-- kinect depth enconding transformed to 16UC1. 
 	-- added a vision sensor to the UR5 tool.
 
+- added flag to deactivate fire rendefing.
+
 ## TODO 
 
 -- colocar vision sensor no braço

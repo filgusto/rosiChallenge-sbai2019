@@ -33,4 +33,4 @@
 
   # Fire enabling
   # allows to enable/disable the fire
-  fire_rendering: true
+  fire_rendering: false
