@@ -14,12 +14,12 @@
   # Kinect processing flag
   # disable it for faster simulation (but no kinect data)
   # possible values: true, false.
-  kinect_processing: false
+  kinect_processing: true
 
   # Hokuyo processing flag
   # disable it for faster simulation (but no hokuyo data)
   # possible values: true, false.
-  hokuyo_processing: true
+  hokuyo_processing: false
 
   # Hokuyo drawing lines 
   # enable it for seeing hokuyo lines
