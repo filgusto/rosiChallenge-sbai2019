@@ -30,3 +30,7 @@
   # enable it for processing/publishing the ur5 tool cam
   # possible values: true, false
   ur5toolCam_processing: true
+
+  # Fire enabling
+  # allows to enable/disable the fire
+  fire_rendering: true
