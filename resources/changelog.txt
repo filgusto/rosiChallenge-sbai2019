@@ -5,22 +5,24 @@ This file list all official major changes on rosi challenge codes or regulation.
 =================================================================================
 ## 2019-09
 
-- created 'load_parameters.launch'.
+- created 'launcher/load_parameters.launch'.
+
+- in simulator
+	-- kinect depth enconding transformed to 16UC1. 
+	-- added a vision sensor to the UR5 tool.
 
 ## TODO 
 
-- Imagem Kinect Detph; saída em rgb; conversão coord p/ RGB;
--- kinect_depth, script definindo como rgb8, porém saída freenect_launch é 6UC1. 
--- tentou conversão com cvBridge.
--- 
+-- colocar vision sensor no braço
 
-- Imagem encoding rgb8, imagina nao ser rgb, sensor_mesgs/image, deve ser em escala cinza, conversão deve ser feita
 - Mover fogo de lugar (criar desligador do fogo).
 - Imagem kinect inversa.
 
 - Adicionar random no fogo (parametro).
 
 - robô desmbembrando
+
+- aumentar velocidade do robô
 
 ---------------------------------------------------------------------------------
 ## 2019-08-27 - URDF ADDITION and  

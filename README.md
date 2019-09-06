@@ -231,6 +231,8 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 
 - `/sensor/hokuyo` - `<rosi_defy/HokuyoReading>` - Emulated hokuyo output. It gives a vector of 3D coordinates of detected point with respect to hokuyo.
 
+- `/sensor/ur5toolCam` - `<sensor_msgs/Image` - Emulated camera on UR5 tool.
+
 - `/simulation/time` - `<std_msgs/Float32>` - V-REP simulation time in \[seconds\]
 
 - `/ur5/jointsPositionCurrentState` - `<rosi_defy/ManipulatorJoints>` - UR-5 robotic manipulator joints current position. 
