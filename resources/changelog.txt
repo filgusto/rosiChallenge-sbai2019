@@ -4,8 +4,20 @@ This file list all official major changes on rosi challenge codes or regulation.
 
 =================================================================================
 
+# TODO 
+
+- Imagem Kinect Detph; saída em rgb; conversão coord p/ RGB;
+-- kinect_depth, script definindo como rgb8, porém saída freenect_launch é 6UC1. 
+-- tentou conversão com cvBridge.
+-- 
+
+- Imagem encoding rgb8, imagina nao ser rgb, sensor_mesgs/image, deve ser em escala cinza, conversão deve ser feita
+- Mover fogo de lugar (criar desligador do fogo).
+- Imagem kinect inversa.
+
+
 ---------------------------------------------------------------------------------
-2019-08-27 - URDF ADDITION and  
+# 2019-08-27 - URDF ADDITION and  
 
 - Created Rosi URDF model and `urdf` folder
 
@@ -24,7 +36,7 @@ This file list all official major changes on rosi challenge codes or regulation.
 
 
 ---------------------------------------------------------------------------------
-2019-08-19 - REGULATION AND REGISTRATION DATES CHANGES
+# 2019-08-19 - REGULATION AND REGISTRATION DATES CHANGES
 
 - The inscription date was extended until 2019-august-26.
 
@@ -35,13 +47,13 @@ Regulation changes (V1.1):
 
 
 ---------------------------------------------------------------------------------
-2019-06-29 - REGULATION AND REGISTRATION SYSTEM
+# 2019-06-29 - REGULATION AND REGISTRATION SYSTEM
 
 - The regulation 'regulamento_rosiChallenge.pdf' V1.0 and changelog 'changelog.txt' documents are available on the official repository.
 
 
 ---------------------------------------------------------------------------------
-2019-06-25 - HOKUYO ADDITION
+# 2019-06-25 - HOKUYO ADDITION
 
 - We have added a planar laser Hokuyo on UR-5 tool. It is already publishing in ROS topics.
 
