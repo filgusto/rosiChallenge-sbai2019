@@ -3,6 +3,4 @@
 	<rosparam command="load" file="$(find rosi_defy)/config/simulation_parameters.yaml" />
 
 
-	<remap from="/sensor/kinect_depth" to="image_raw" />
-
 </launch>

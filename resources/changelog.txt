@@ -11,6 +11,7 @@ This file list all official major changes on rosi challenge codes or regulation.
 	-- kinect depth enconding transformed to 16UC1. 
 	-- added a vision sensor to the UR5 tool.
 	-- fixed kinect depth image step to width x 2.
+	-- changed kinect frame id to camera_rgb_optical_frame (rgb) and camera_depth_optical_frame (depth)
 
 - added flag to deactivate fire rendefing.
 
