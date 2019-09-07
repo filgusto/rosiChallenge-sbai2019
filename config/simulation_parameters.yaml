@@ -29,7 +29,7 @@
   # Camera on UR5 tool processing flag
   # enable it for processing/publishing the ur5 tool cam
   # possible values: true, false
-  ur5toolCam_processing: true
+  ur5toolCam_processing: false
 
   # Fire enabling
   # allows to enable/disable the fire

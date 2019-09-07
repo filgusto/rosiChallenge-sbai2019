@@ -10,15 +10,14 @@ This file list all official major changes on rosi challenge codes or regulation.
 - in simulator
 	-- kinect depth enconding transformed to 16UC1. 
 	-- added a vision sensor to the UR5 tool.
+	-- fixed kinect depth image step to width x 2.
 
 - added flag to deactivate fire rendefing.
 
 ## TODO 
 
--- colocar vision sensor no braço
 
-- Mover fogo de lugar (criar desligador do fogo).
-- Imagem kinect inversa.
+
 
 - Adicionar random no fogo (parametro).
 
