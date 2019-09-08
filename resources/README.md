@@ -3,7 +3,7 @@
 This file list all official major changes on rosi challenge codes or regulation.
 
 =================================================================================
-## 2019-09 - 1st major bug corrective
+## 2019-09-07 - INDEPENDENCE DAY's 1st major bug correction
 
 - created 'launcher/load_parameters.launch'.
 
@@ -15,9 +15,11 @@ This file list all official major changes on rosi challenge codes or regulation.
 	-- rosi publishes its first static transform to ROS tf server.
 	-- velodyne treatment now is on an external plugin. See README.md for more information.
 	-- velodyne now publishes in PointCloud2 format.
+	-- fixed dynamical arms bounding box.
+	-- fixed kinetic static object mounted over dynamic.
+	-- removed dynamic arms local and global response.
 
 - added flag to deactivate fire rendering in ./config/parameters.yaml
-
 
 
 ---------------------------------------------------------------------------------
