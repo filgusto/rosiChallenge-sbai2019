@@ -97,12 +97,14 @@ $ vrep
 (Notice that you have created this command on the last step using the `alias` command on your `.bashrc`)
 
 
-**6.** Clone recursively the V-REP/ROS interface to your `catkin_ws/src`:
+**6.** Clone recursively the V-REP/ROS interface and V-REP Velodyne2Ros plugin to your `catkin_ws/src`:
 ```
 $ cd $ROS_CATKIN_WS/src/
 $ git clone --recursive https://github.com/CoppeliaRobotics/v_repExtRosInterface.git vrep_ros_interface
+$ git clone https://github.com/filRocha/vrep_plugin_velodyne.git
 ```
 (More information and credits about this interface can be found on its [Github repository](https://github.com/CoppeliaRobotics/v_repExtRosInterface.git)
+
 
 
 **7.** Install some support packages:
@@ -151,9 +153,10 @@ $ catkin build
 ```
 
 
-**10.** If your compilation runs well, there is now a ros interface library called `libv_repExtRosInterface.so` on `<catkin_ws>/dev/lib/` folder. You must copy it to the V-REP folder:
+**10.** If your compilation runs well, there is now a ros interface and RosVelodyne libraries called `libv_repExtRosInterface.so` and `libv_repExtRosVelodyne.so`, respectively, on `<catkin_ws>/dev/lib/` folder. You must copy it to the V-REP folder:
 ```
 $ cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosInterface.so $VREP_ROOT
+$ cp $ROS_CATKIN_WS/devel/lib/libv_repExtRosVelodyne.so $VREP_ROOT
 ```
 (Notice that, for further events, every time you add new custom ROS messages to the interface, you have to re-compile this library and re-copy it to `$VREP_ROOT`.
 
@@ -227,7 +230,7 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 
 - `/sensor/kinect_info` - `<sensor_msgs/CameraInfo>` - Emulated kinect information.
 
-- `/sensor/velodyne` - `<sensor_msgs/PointCloud>` - Emulated Velodyne output.
+- `/sensor/velodyne` - `<sensor_msgs/PointCloud2>` - Emulated Velodyne output.
 
 - `/sensor/hokuyo` - `<rosi_defy/HokuyoReading>` - Emulated hokuyo output. It gives a vector of 3D coordinates of detected point with respect to hokuyo.
 
