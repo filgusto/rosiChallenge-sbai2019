@@ -23,6 +23,7 @@
 
   # Hokuyo drawing lines 
   # enable it for seeing hokuyo lines
+  # ATTENTION: This feature is strictly visual and do not affect velodyne processing
   # possible values: true, false.
   hokuyo_lines: false
 

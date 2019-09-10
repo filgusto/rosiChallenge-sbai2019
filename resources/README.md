@@ -3,6 +3,12 @@
 This file list all official major changes on rosi challenge codes or regulation.
 
 =================================================================================
+## 2019-09-10 - Correcting Velodyne bug
+
+	-- Velodyne was not correctly publishing its local transform. This lead to an error while plotting its data. This is now corrected.
+
+
+---------------------------------------------------------------------------------
 ## 2019-09-07 - INDEPENDENCE DAY's 1st major bug correction
 
 - created 'launcher/load_parameters.launch'.
