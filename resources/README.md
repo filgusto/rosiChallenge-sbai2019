@@ -5,10 +5,12 @@ This file list all official major changes on ROSI Challenge codes or regulation.
 ===============================================================================
 ## 2019-09-16 - Minor bug 
 
-	-- Corrected kinect's 'is_bigendian' bit.
+- Fixed kinect stamp.
+- Corrected kinect's 'is_bigendian' bit.
 
 ---------------------------------------------------------------------------------
 ## 2019-09-10 - Correcting Velodyne bug
+
 
 - Velodyne was not correctly publishing its local transform. This lead to an error while plotting its data. This is now corrected.
 
