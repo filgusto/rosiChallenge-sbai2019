@@ -5,7 +5,7 @@ This file list all official major changes on ROSI Challenge codes or regulation.
 ===============================================================================
 ## 2019-09-16 - Minor bug 
 
-- Fixed kinect stamp.
+- Fixed kinect stamp (thanks to Danilo Schneider).
 - Corrected kinect's 'is_bigendian' bit.
 
 ---------------------------------------------------------------------------------
