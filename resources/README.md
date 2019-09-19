@@ -3,6 +3,12 @@
 This file list all official major changes on ROSI Challenge codes or regulation.
 
 ===============================================================================
+## 2019-09-19 - Regulation changes
+
+- in './resources/regulamento_rosiChallenge' - Regulation (V1.4):	
+	- changed prize format.
+
+---------------------------------------------------------------------------------
 ## 2019-09-16 - Minor bug 
 
 - Fixed kinect stamp (thanks to Danilo Schneider).
