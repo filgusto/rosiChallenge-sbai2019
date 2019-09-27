@@ -1,0 +1,195 @@
+<!-- ROSI URDF MODEL -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rosi">
+
+	<!-- Misc parameters -->
+	<xacro:property name="mesh_folder" value="package://rosi_defy/urdf/meshes" />
+	<xacro:property name="ur5_link_mesh" value="${mesh_folder}/ur5_link_" />
+
+	<!-- UR5 parameters -->
+	<xacro:property name="ur5_joints_effort" value="50" />
+	<xacro:property name="ur5_joints_velocity" value="1.57" />
+	<xacro:property name="ur5_joints_lower" value="-6.28" />
+	<xacro:property name="ur5_joints_upper" value="6.28" />
+
+
+	<!-- UR5 xacro macros -->
+	<xacro:macro name="ur5_joints_config" params="effort velocity lower upper">
+		<limit effort="${effort}" velocity="${velocity}" lower="${lower}" upper="${upper}" />
+	</xacro:macro>
+
+	<xacro:macro name="ur5_joint_def" params="num_joint num_parent num_child xyz rpy" >
+		<joint name="joint_ur5_j${num_joint}" type="revolute">
+			<parent link="ur5_link_${num_parent}" />
+			<child link="ur5_link_${num_child}" />
+			<origin xyz="${xyz}" rpy="${rpy}" />
+			<xacro:ur5_joints_config effort="${ur5_joints_effort}" velocity="${ur5_joints_velocity}" lower="${ur5_joints_lower}" upper="${ur5_joints_upper}" />
+			<axis xyz="0 0 1" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:macro name="ur5_link_def" params="link_num xyz rpy" >
+		<link name="ur5_link_${link_num}">
+			<visual>
+				<geometry>
+					<mesh filename="${ur5_link_mesh}${link_num}.stl" />
+				</geometry>
+				<origin xyz="${xyz}" rpy="${rpy}" />
+			</visual>
+		</link>
+	</xacro:macro>
+
+	<!-- wheel xacro macros -->
+	<xacro:macro name="wheel_joint_def" params="wheel_num xyz rpy">
+		<joint name="joint_wheel_${wheel_num}" type="continuous">
+			<parent link="base_link" />
+			<child link="wheel_${wheel_num}" />
+			<origin xyz="${xyz}" rpy="${rpy}" />
+			<axis xyz="0 0 1" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:macro name="wheel_link_def" params="wheel_num xyz rpy">
+		<link name="wheel_${wheel_num}">
+			<visual>
+				<geometry>
+					<mesh filename="${mesh_folder}/wheel.stl" />
+				</geometry>
+				<origin xyz="${xyz}" rpy="${rpy}" />
+			</visual>
+		</link>
+	</xacro:macro>
+
+	<!-- arms xacro macros -->
+	<xacro:macro name="arms_joints_def" params="arm_num xyz rpy">
+		<joint name="joint_arm_${arm_num}" type="continuous">
+			<parent link="base_link" />
+			<child link="arm_${arm_num}" />
+			<origin xyz="${xyz}" rpy="${rpy}" />
+			<axis xyz="0 0 1" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:macro name="arms_link_def" params="arm_num xyz rpy" >
+		<link name="arm_${arm_num}">
+			<visual>
+				<geometry>
+					<mesh filename="${mesh_folder}/arm.stl" />
+				</geometry>
+				<origin xyz="${xyz}" rpy="${rpy}" />
+			</visual>
+		</link>
+	</xacro:macro>
+
+	<!-- ============ Defining  links ===============-->
+
+	<!-- Defining base link -->
+	<link name="base_link">
+		<origin xyz="0 0 0" rpy="0 0 0"/> 
+		<visual>
+			<geometry>
+				<mesh filename="${mesh_folder}/rosi_base.stl" />
+			</geometry>
+		</visual>
+	</link>
+
+	<!-- defining arms links -->
+	<xacro:arms_link_def arm_num="1" xyz="0.1805 0 0" rpy="0 0 0" />
+	<xacro:arms_link_def arm_num="2" xyz="-0.1805 0 0" rpy="0 0 3.14" />
+	<xacro:arms_link_def arm_num="3" xyz="0.1805 0 0" rpy="0 0 0" />
+	<xacro:arms_link_def arm_num="4" xyz="-0.1805 0 0" rpy="0 0 3.14" />
+
+	<!-- Defining wheel links -->
+	<xacro:wheel_link_def wheel_num="1" xyz="0 0 0" rpy="0 0 0" />
+	<xacro:wheel_link_def wheel_num="2" xyz="0 0 0" rpy="0 0 0" />
+	<xacro:wheel_link_def wheel_num="3" xyz="0 0 0" rpy="0 0 0" />
+	<xacro:wheel_link_def wheel_num="4" xyz="0 0 0" rpy="0 0 0" />
+
+
+	<!-- Defining sensors links -->
+	<link name="velodyne">
+		<visual>
+			<geometry>
+				<mesh filename="${mesh_folder}/velodyne.stl" />
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="kinect">
+		<visual>
+			<geometry>
+				<mesh filename="${mesh_folder}/kinect.stl" />
+			</geometry>
+			<origin xyz="-0.023 0 0" rpy="-1.57 0 1.57" />
+		</visual>
+	</link>
+
+	<!-- Defining UR5 links -->
+	<xacro:ur5_link_def link_num="2" xyz="0 0 0.070" rpy="0 0 1.57" />
+	<xacro:ur5_link_def link_num="3" xyz="0.212 0 0.064" rpy="1.57 0 1.57" />
+	<xacro:ur5_link_def link_num="4" xyz="0.187 0 -0.058" rpy="1.57 0 1.57" />
+	<xacro:ur5_link_def link_num="5" xyz="0 0 0.032" rpy="1.57 0 1.57" />
+	<xacro:ur5_link_def link_num="6" xyz="0 0 0.042" rpy="0 0 1.57" />
+	<xacro:ur5_link_def link_num="7" xyz="0 0 0.077" rpy="1.57 0 0" />
+
+	<!-- Defining UR5 tool link -->
+	<link name="tool_pointer" >
+		<visual>
+			<geometry>
+				<mesh filename="${mesh_folder}/tool_pointer.stl" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 -1.57" />
+		</visual>
+	</link>
+
+	<!-- ============ Defining JOINTS ===============-->
+
+	<!-- Defining arms joints -->
+	<xacro:arms_joints_def arm_num="1" xyz="0.3152 -0.2210 -0.0993" rpy="1.57 0 0" />
+	<xacro:arms_joints_def arm_num="2" xyz="-0.3152 -0.2210 -0.0993" rpy="1.57 0 0" />
+	<xacro:arms_joints_def arm_num="3" xyz="0.3152 0.2210 -0.0993" rpy="-1.57 0 0" />
+	<xacro:arms_joints_def arm_num="4" xyz="-0.3152 0.2210 -0.0993" rpy="-1.57 0 0" />
+
+	<!-- Defining wheel joints -->
+	<xacro:wheel_joint_def wheel_num="1" xyz="0.3152 -0.2880 -0.0993" rpy="1.57 0 0" />
+	<xacro:wheel_joint_def wheel_num="2" xyz="-0.3152 -0.2880 -0.0993" rpy="1.57 0 0" />
+	<xacro:wheel_joint_def wheel_num="3" xyz="0.3152 0.2880 -0.0993" rpy="-1.57 3.14 0" />
+	<xacro:wheel_joint_def wheel_num="4" xyz="-0.3152 0.2880 -0.0993" rpy="-1.57 3.14 0" />
+	
+	<!-- Defining ur5 joints -->
+	<joint name="joint_ur5_j1" type="revolute">
+		<parent link="base_link" />
+		<child link="ur5_link_2" />
+		<origin xyz="-0.138 -0.067 0.184" rpy="0 0 -1.57" />
+		<xacro:ur5_joints_config effort="${ur5_joints_effort}" velocity="${ur5_joints_velocity}" lower="${ur5_joints_lower}" upper="${ur5_joints_upper}" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+	<xacro:ur5_joint_def num_joint="2" num_parent="2" num_child="3" xyz="-0.070 0 0.066" rpy="0 -1.57 0" />
+	<xacro:ur5_joint_def num_joint="3" num_parent="3" num_child="4" xyz="0.425 0 0" rpy="0 0 0" />
+	<xacro:ur5_joint_def num_joint="4" num_parent="4" num_child="5" xyz="0.392 0 0" rpy="0 0 0" />
+	<xacro:ur5_joint_def num_joint="5" num_parent="5" num_child="6" xyz="0.045 0 0.039" rpy="0 1.57 0" />
+	<xacro:ur5_joint_def num_joint="6" num_parent="6" num_child="7" xyz="0.014 0 0.049" rpy="0 -1.57 0" />
+
+	<!-- Defining tool joint -->
+	<joint name="joint_l7_tool" type="fixed">
+		<parent link="ur5_link_7" />
+		<child link="tool_pointer" />
+		<origin xyz="-0.018 0.034 0.195 " rpy="0 0 3.14" />
+	</joint>
+
+	<!-- Defining sensor joints -->
+	<joint name="joint_velodyne" type="fixed">
+		<parent link="base_link" />
+		<child link="velodyne" />
+		<origin xyz="0.242 0.002 0.1655" rpy="0 0.26 0" />
+	</joint>
+
+	<joint name="joint_kinect" type="revolute">
+		<parent link="base_link" />
+		<child link="kinect" />
+		<origin xyz="0.3 0 0.009" rpy="1.57 1.57 0" />
+		<limit effort="30" velocity="0.79" lower="-0.79" upper="0.79" />
+		<axis xyz="0 0 1" />
+	</joint>
+
+</robot>
