@@ -3,6 +3,14 @@
 This file list all official major changes on ROSI Challenge codes or regulation.
 
 ===============================================================================
+## 2019-09-27 - Rosi URDF for Moveit
+
+ - There was a problem involving MoveIt and the former Rosi URDF. Something about the decimal signal (point or comma). Created `<rosi_defy>/urdf/rosi_moveIt.urdf` for MoveIt and Gazebo integration.
+ - in './resources/regulamento_rosiChallenge' - Regulation (V1.5):	
+ 	- updated collection tasks order. Nothing substantial.
+ 	
+
+---------------------------------------------------------------------------------
 ## 2019-09-19 - Regulation changes
 
 - in './resources/regulamento_rosiChallenge' - Regulation (V1.4):	

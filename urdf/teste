@@ -1,0 +1,5 @@
+ rosrun xacro xacro --inorder ~/ros/rosiSim_catkin_ws/src/rosi_defy/urdf/rosi.urdf.xacro > ~/Desktop/test.urdf
+
+
+  urdf_to_graphiz ~/ros/rosiSim_catkin_ws/src/rosi_defy/urdf/rosi_generated.urdf
+
