@@ -3,6 +3,15 @@
 This file list all official major changes on ROSI Challenge codes or regulation.
 
 ===============================================================================
+---------------------------------------------------------------------------------
+## 2019-10-11 - Regulation changes
+
+
+- in './resources/regulamento_rosiChallenge' - Regulation (V1.5.2):
+	- added the verification stage between 2nd and 3rd challenge stages.
+	- added the "Zona de Iniício", for describing the robots' initial position possibilities.
+
+---------------------------------------------------------------------------------
 ## 2019-09-27 - Rosi URDF for Moveit
 
  - There was a problem involving MoveIt and the former Rosi URDF. Something about the decimal signal (point or comma). Created `<rosi_defy>/urdf/rosi_moveIt.urdf` for MoveIt and Gazebo integration.
