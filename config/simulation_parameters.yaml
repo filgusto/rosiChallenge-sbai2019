@@ -35,3 +35,8 @@
   # Fire enabling
   # allows to enable/disable the fire
   fire_rendering: true
+
+  # Changes the kinect message header's time
+  # Enable it for changing to sim.getSimulationTime()
+  # possible values: true (time from Simulation) or false (time from ROS)
+  time_header_getSimTime: false
