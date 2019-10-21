@@ -4,6 +4,11 @@ This file list all official major changes on ROSI Challenge codes or regulation.
 
 ===============================================================================
 ---------------------------------------------------------------------------------
+## 2019-10-21 - Minor changes to the regulation
+	
+	- added logos and org. members.
+
+---------------------------------------------------------------------------------
 ## 2019-10-15 - Added simulation time flag
 
 - Kinect and the UR-5 tool cam were publishing the ROS time on its header. We added a 
