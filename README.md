@@ -253,6 +253,22 @@ As a rule of thumb, all variables are mapped in the International System of Unit
 - `/ur5/jointsPosTargetCommand` - `<rosi_defy/ManipulatorJoints>` - Sets the UR-5 joints desired angular position. Each joint has a built-in PID controller. One may find more UR-5 info in [here](https://www.universal-robots.com/media/50588/ur5_en.pdf).
 
 
+## Teams' Codes
+
+The following are the ROSI Challenge finalists' codes:
+
+- **1st - Time IFES Vitória**: https://github.com/AntMol8/Time_Ifes_Vitoria
+- **2nd - Pra Valê**: https://github.com/vinicius-r-silva/Pra_Vale
+- **3rd - AAI Robotics**: https://github.com/ara1557/AAI_robotics
+- **4th - Hofs**: https://github.com/Gustavo-Hofs/hofs_rosi_challenge_2019
+- **5th - PPGEAS - UFSC**: https://github.com/feressalem/rosi_challenge_ppgeas_ufsc
+- **6th ForROS**: https://github.com/raphaellmsousa/ForROS
+- **7th Pyneapple**: https://github.com/DiegoFr75/pyneapple
+- **8th Taura Bots**: https://github.com/alikolling/taura_Rosi_challenge
+- **9th Titãs da Robótica**: https://github.com/jeanpandolfi/TitasdaRoboticaRosiChallenge
+
+We strongly recommend the teams' to maintain their repositories online and public. However, we are not responsible for their content and situation.
+
 # I have found something wrong!
 
 Great! Please, open a new **issue** directly on this repository, or send your **pull request**.
