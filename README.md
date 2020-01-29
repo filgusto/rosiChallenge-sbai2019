@@ -15,6 +15,8 @@ Moreover, these noble gentlemen greatly contributed to this simulator: Amauri Co
 
 # DISCLAIMER
 
+**V-REP is now CoppeliaSim simulator. The straightforward application of this tutorial may be deprecated**.
+
 **Remember that your solution has to be implemented in the ROS (Robot Operating System) package/nodes format. The code has to be well structured, readable and cataloged as it will be open-source available.**
 
 **DO FORK THIS REPOSITORY only if are willing to propose corrections/improvements to the simulator. YOUR SOLUTION to the challenge has to be created on a CLEAN GITHUB REPOSITORY!**
